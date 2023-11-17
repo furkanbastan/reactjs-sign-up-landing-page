@@ -1,0 +1,38 @@
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.sign-up-page {
+    position: relative;
+    min-height: 100vh;
+    background-image: url('./images/bg-intro-desktop.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background-color: var(--red);
+    }
+
+    @media only screen and (max-width: 1000px) {
+        display: flex;
+        flex-direction: column;
+        gap: calc(var(--space-10) * 1.5);
+        padding-block: calc(var(--space-10) * 2);
+        text-align: center;
+    }
+}
